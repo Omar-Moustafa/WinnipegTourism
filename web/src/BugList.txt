@@ -1,2 +1,4 @@
 - Winnipeg sign home page
-- Winnipeg sign nav bar
+- Winnipeg sign nav bar DOES
+- Car icon
+- All icons are buttons
