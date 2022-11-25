@@ -3,7 +3,7 @@ import { CuisineIcon } from 'src/components/Icons/Icons'
 const CuisineBox = ({ cuisineType, colSpan }) => {
   return (
     <button
-      className={`mx-auto w-full rounded-lg border-2 p-2 text-center hover:bg-amber-200 ${colSpan}`}
+      className={`mx-auto h-24 w-24 border-2 p-2 text-center hover:bg-amber-200 ${colSpan} rounded-full`}
     >
       <p className="text-sm font-semibold">{cuisineType}</p>
     </button>
@@ -16,7 +16,7 @@ const CuisinePage = () => {
       <div className="text-center">
         <CuisineIcon className={'h-32 w-32'} />
         <p className="text-2xl font-bold">Cuisine</p>
-        <div className="mt-10 grid grid-cols-6 gap-6 px-24">
+        <div className="mt-10 grid grid-cols-12 gap-6 px-24">
           <CuisineBox cuisineType={'Middle Eastern'} colSpan={'col-span-3'} />
           <CuisineBox cuisineType={'African'} colSpan={'col-span-3'} />
           <CuisineBox cuisineType={'Chinese'} colSpan={'col-span-2'} />
