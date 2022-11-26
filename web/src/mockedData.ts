@@ -1,3 +1,35 @@
+import AccommodationAirbnb from 'src/Images/accomodation_airbnb1.jpg'
+import AccomodationFort from 'src/Images/accomodation_fort.jpg'
+import AccommodationMarriot from 'src/Images/accomodation_marriot.jpg'
+import AccommodationMere from 'src/Images/accomodation_mere.jpg'
+import CuisineAfv from 'src/Images/cuisine_afv.jpg'
+import CuisineBaked from 'src/Images/cuisine_baked.jpg'
+import CuisineClayOven from 'src/Images/cuisine_clayoven.png'
+import CuisineKum from 'src/Images/cuisine_kum_koon.jpg'
+import CuisineMesobEthopia from 'src/Images/cuisine_mesob_ethopian.png'
+import CuisineMrCalzone from 'src/Images/cuisine_mr_calzone.png'
+import CuisineShahi from 'src/Images/cuisine_shahi_flames.jpg'
+import CuisineSmokes from 'src/Images/cuisine_smokes.png'
+import CuisineTasteOfMed from 'src/Images/cuisine_taste_of_med.png'
+import CuisineSingyun from 'src/Images/singyun.jpg'
+import SummerActPark from 'src/Images/summer_asspark1.jpg'
+import SummerActBeach from 'src/Images/summer_beach.jpg'
+import SummerActBoat from 'src/Images/summer_boat.jpg'
+import SummerActForks from 'src/Images/summer_forks.jpg'
+import SummerActGokart from 'src/Images/summer_gokart.jpg'
+import SummerActGolf from 'src/Images/summer_golf.webp'
+import SummerActHorse from 'src/Images/summer_horseback3.jpg'
+import TransportationEnterprise from 'src/Images/transpo_enterprise.jpg'
+import TransportationTransit from 'src/Images/transpo_transit.png'
+import TransportationUber from 'src/Images/transpo_uber.png'
+import WinterActArchery from 'src/Images/winter_archery.jpg'
+import WinterActAxe from 'src/Images/winter_axe1.png'
+import WinterActCMHR from 'src/Images/winter_cmhr1.jpg'
+import WinterActJets from 'src/Images/winter_jets1.jpg'
+import WinterActMiniGolf from 'src/Images/winter_mini_golf.jpg'
+import WinterActThermea from 'src/Images/winter_thermea.jpg'
+import WinterActWag from 'src/Images/winter_wag1.jpg'
+
 export const middleEasternCuisines = [
   {
     name: 'Taste of Mediterranean',
@@ -5,6 +37,7 @@ export const middleEasternCuisines = [
     rating: 4.4,
     location: '244 Kennedy St, Winnipeg, MB R3C 1T1',
     website: 'http://www.tasteofmediterranean.ca/',
+    image: CuisineTasteOfMed,
   },
   {
     name: 'Mr. Calzone',
@@ -13,6 +46,7 @@ export const middleEasternCuisines = [
     location:
       '1254 Pembina Hwy, Winnipeg, MB R3T 2B1 (2 other locations on 653 Corydon Ave and 749 Ellice Ave',
     website: 'https://www.mrcalzone.ca/',
+    image: CuisineMrCalzone,
   },
 ]
 
@@ -24,6 +58,7 @@ export const indianCuisines = [
     location:
       '1 Portage Ave E #3, Winnipeg, MB R3B 3N3 (2 other locations on 247 Edmonton St and 1600 Kenaston Blvd #240',
     website: 'https://www.clayoven.ca/',
+    image: CuisineClayOven,
   },
   {
     name: 'Shahi Flames',
@@ -31,6 +66,7 @@ export const indianCuisines = [
     rating: 4.6,
     location: '208 Marion St, Winnipeg, MB R2H 0T6',
     website: 'https://shahiflames.com/',
+    image: CuisineShahi,
   },
 ]
 
@@ -41,6 +77,7 @@ export const chineseCuisines = [
     rating: 4.6,
     location: '150 Provencher Blvd, Winnipeg, MB R2H 0H3',
     website: 'https://singyunrestaurantwinnipeg.com/',
+    image: CuisineSingyun,
   },
   {
     name: 'Kum Koon Garden',
@@ -48,6 +85,7 @@ export const chineseCuisines = [
     rating: 4.2,
     location: '257 King St, Winnipeg, MB R3B 1J6',
     website: 'http://www.kumkoongarden.com/',
+    image: CuisineKum,
   },
 ]
 
@@ -58,6 +96,7 @@ export const africanCuisines = [
     rating: 4.9,
     location: '121 Osborne St #200, Winnipeg, MB R3L 1Y4',
     website: 'https://mesob.ca/',
+    image: CuisineMesobEthopia,
   },
   {
     name: 'AFV Kitchen Express',
@@ -65,6 +104,7 @@ export const africanCuisines = [
     rating: 4.7,
     location: '1555 Regent Ave W F3, Winnipeg, MB R2C 4J2',
     website: 'https://afvkitchen.ca/',
+    image: CuisineAfv,
   },
 ]
 
@@ -75,6 +115,7 @@ export const localCuisines = [
     rating: 4.0,
     location: '131 Albert St, Winnipeg, MB R3B 1G6',
     website: 'https://smokespoutinerie.com/',
+    image: CuisineSmokes,
   },
   {
     name: 'Baked Expectations',
@@ -82,6 +123,7 @@ export const localCuisines = [
     rating: 4.1,
     location: '161 Osborne St, Winnipeg, MB R3L 1Y7',
     website: 'https://bakedexpectations.ca/',
+    image: CuisineBaked,
   },
 ]
 
@@ -93,6 +135,7 @@ export const accomodations = [
     price: 195,
     location: '350 St Mary Ave, Winnipeg, MB R3C 3J2',
     website: 'https://www.marriott.com/en-us/hotels',
+    image: AccommodationMarriot,
   },
   {
     name: 'Mere Hotel',
@@ -101,14 +144,16 @@ export const accomodations = [
     price: 169,
     location: ' 333 Waterfront Dr, Winnipeg, MB R3B 0V1',
     website: 'https://www.merehotel.com/',
+    image: AccommodationMere,
   },
   {
     name: 'Fort Garry Hotel',
-    rating: '4.4/5',
+    rating: '4.4',
     amenities: 'pool, hot tub, pet-friendly, free-wifi, gym',
     price: 152,
     location: '222 Broadway, Winnipeg, MB R3C 0R3',
     website: 'https://www.fortgarryhotel.com/',
+    image: AccomodationFort,
   },
 ]
 
@@ -118,18 +163,21 @@ export const transportation = [
     location: 'various locations in the city',
     price: 'price varies depending on vehicle chosen.',
     website: 'https://www.enterprise.ca/en/home.html',
+    image: TransportationEnterprise,
   },
   {
     type: 'Uber',
     location: 'Any where with in Winnipeg',
     price: 'Varies depending on destinations',
     website: 'https://www.uber.com/',
+    image: TransportationUber,
   },
   {
     type: 'Winnipeg Transit',
     location: 'Any bus stop location within the city',
     price: '3.10 for transfer valid for /75minutes',
     website: 'https://winnipegtransit.com/',
+    image: TransportationTransit,
   },
 ]
 
@@ -142,6 +190,7 @@ export const summerActivites = [
     location: '30 Nimowin Rd, Oakbank, MB R5M 0C9',
     price: '35$ per hour trail ride or 45$ per hour private ride',
     website: 'http://www.bhpr.ca/',
+    image: SummerActHorse,
   },
   {
     name: 'Boat Ride @ West Hawk Lake Marina',
@@ -151,6 +200,7 @@ export const summerActivites = [
     location: 'westhawk lake',
     price: 'see website for prices as they differ',
     website: 'https://www.westhawkmarine.com/rentals-boats-dealership--rentals',
+    image: SummerActBoat,
   },
   {
     name: 'Go karting @ Grand Prix Amusements',
@@ -160,6 +210,7 @@ export const summerActivites = [
     location: '57102 Symington Rd, Springfield, MB R5T 0E4',
     price: 'see website for prices as they differ',
     website: 'https://grandprixamusements.ca/go-karts/',
+    image: SummerActGokart,
   },
   {
     name: 'Golfing',
@@ -168,6 +219,7 @@ export const summerActivites = [
     location: '2021 Main St, Winnipeg, MB R2V 2B9',
     price: 'see website for prices as they differ',
     website: 'https://legacy.winnipeg.ca/golf/kildonan.stm',
+    image: SummerActGolf,
   },
   {
     name: 'Beach day @ birds hill provincial park',
@@ -178,6 +230,7 @@ export const summerActivites = [
     price: 'free',
     website:
       'https://www.gov.mb.ca/sd/parks/park-maps-and-locations/central/birds.html',
+    image: SummerActBeach,
   },
 ]
 
@@ -192,6 +245,7 @@ export const winterActivities = [
     price: '20$/person (bow rental included in this price)',
     website:
       'https://www.heightsoutdoors.com/shooting-range-birthdays-lessons/',
+    image: WinterActArchery,
   },
   {
     name: 'Axe throwing',
@@ -201,6 +255,7 @@ export const winterActivities = [
     location: '30 Durand Rd Unit #4, Winnipeg, MB R2J 3T2',
     price: '30$/person',
     website: 'https://www.axethrowingwinnipeg.ca/#book-now',
+    image: WinterActAxe,
   },
   {
     name: 'Black Light Mini golf',
@@ -211,6 +266,7 @@ export const winterActivities = [
     location: '423 McPhillips St, Winnipeg, MB R2X 2Z8',
     price: '7.95',
     website: 'https://u-puttz.ca/black-light-mini-golf/',
+    image: WinterActMiniGolf,
   },
   {
     name: 'Thermea by Nordik Spa - Nature Day',
@@ -221,6 +277,7 @@ export const winterActivities = [
     location: '775 Crescent Dr, Winnipeg, MB R3T 1X3',
     price: 'varies see website for details',
     website: 'https://www.thermea.ca/rates-packages/a-la-carte-rates/',
+    image: WinterActThermea,
   },
   {
     name: 'Canadian Muesum for Human Rights',
@@ -231,5 +288,6 @@ export const winterActivities = [
     location: '85 Israel Asper Way, Winnipeg, MB R3C 0L5',
     price: '18$ for adults (18+) and 8$ for under 18',
     website: 'https://humanrights.ca/',
+    image: WinterActCMHR,
   },
 ]

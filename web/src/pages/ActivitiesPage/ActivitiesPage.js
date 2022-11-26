@@ -4,10 +4,10 @@ import { summerActivites, winterActivities } from 'src/mockedData'
 const ActivityBox = ({ ActivityType, divId }) => {
   return (
     <button
-      className={`mx-auto h-24 w-24 rounded-full border-2 p-2 text-center hover:bg-amber-200`}
+      className={`mx-auto h-32 w-32 rounded-full border-2 p-2 text-center hover:bg-amber-200`}
       onClick={() => document.getElementById(divId).scrollIntoView()}
     >
-      <p className="text-sm font-semibold">{ActivityType}</p>
+      <p className="text-2xl font-semibold">{ActivityType}</p>
     </button>
   )
 }
@@ -21,7 +21,7 @@ const ActivitiesDetails = ({
   website,
 }) => {
   return (
-    <div className="grid grid-cols-10 text-left">
+    <div className="grid grid-cols-10 gap-2 text-left">
       <p className="col-span-10 text-left text-lg font-semibold">{name}</p>
       <p className="col-span-2 font-semibold">Duration:</p>
       <p className="col-span-8">{duration}</p>
@@ -42,28 +42,30 @@ const ActivitiesDetails = ({
 const ActivitiesPage = () => {
   return (
     <>
-      <div className="w-full">
+      <div className="mt-2 w-full">
         <div className="px-20 text-center">
           <ActivityIcon className={'h-32 w-32'} disabled />
           <p className="text-2xl font-bold">ACTIVITIES</p>
-          <div className="mx-auto mt-10 grid w-64 grid-cols-2 gap-1">
+          <div className="mx-auto mt-10 grid w-96 grid-cols-2 gap-1">
             <ActivityBox ActivityType={'Summer'} divId={'summer'} />
             <ActivityBox ActivityType={'Winter'} divId={'winter'} />
           </div>
         </div>
       </div>
 
-      <div className="mx-20 mt-10 grid grid-cols-10 gap-3 border-2 p-4">
+      <div className="mx-20 mt-10 grid grid-cols-10 gap-5 border-2 p-4">
         <div
           id="summer"
-          className="col-span-10 border-2 bg-amber-200 text-center font-bold"
+          className="col-span-10 border-2 bg-amber-200 text-center text-4xl font-semibold"
         >
           SUMMER
         </div>
         {summerActivites.map((c) => (
           <>
-            <div className="col-span-3 border-2 p-1">PICTURE</div>
-            <div className="col-span-7 border-2 p-1">
+            <div className="col-span-3 mt-2 border-2 p-1">
+              <img src={c.image} alt={c.name} className="m-auto" />
+            </div>
+            <div className="col-span-7 mt-2 border-2 p-1">
               <ActivitiesDetails
                 name={c.name}
                 duration={c.duration}
@@ -78,14 +80,16 @@ const ActivitiesPage = () => {
 
         <div
           id="winter"
-          className="col-span-10 mt-10 border-2 bg-amber-200 text-center font-bold"
+          className="col-span-10 mt-10 border-2 bg-amber-200 text-center text-2xl font-semibold"
         >
           WINTER
         </div>
         {winterActivities.map((c) => (
           <>
-            <div className="col-span-3 border-2 p-1">PICTURE</div>
-            <div className="col-span-7 border-2 p-1">
+            <div className="col-span-3 mt-2 border-2 p-1">
+              <img src={c.image} alt={c.name} className="m-auto" />
+            </div>
+            <div className="col-span-7 mt-2 border-2 p-1">
               <ActivitiesDetails
                 name={c.name}
                 duration={c.duration}

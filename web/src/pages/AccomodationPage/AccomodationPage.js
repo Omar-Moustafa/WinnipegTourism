@@ -9,7 +9,7 @@ const AccomodationDetails = ({
   website,
 }) => {
   return (
-    <div className="grid grid-cols-10 px-2 text-left">
+    <div className="grid grid-cols-10 gap-2 px-2 text-left">
       <p className="col-span-10 text-left text-lg font-semibold">{name}</p>
       <p className="col-span-2 font-semibold">Rating:</p>
       <p className="col-span-8">{rating}/5</p>
@@ -33,10 +33,12 @@ const AccomodationPage = () => {
       <div className="px-20 text-center">
         <HomeIcon className={'h-32 w-32'} disabled />
         <p className="text-2xl font-bold">Accomodation</p>
-        <div className="mt-10 grid grid-cols-10 gap-3 border-2 p-4">
+        <div className="mt-10 grid grid-cols-10 gap-5 border-2 p-4">
           {accomodations.map((a) => (
             <>
-              <div className="col-span-3 border-2 p-1">PICTURE</div>
+              <div className="col-span-3 border-2 p-1">
+                <img src={a.image} alt={a.name} />
+              </div>
               <div className="col-span-7 border-2 p-1">
                 <AccomodationDetails
                   name={a.name}

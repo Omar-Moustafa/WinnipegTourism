@@ -26,13 +26,13 @@ const FaqPage = () => {
           />
           <FAQBox
             name={'Fire Department'}
-            phone={'311'}
-            website={'winnipeg.ca/fire-help'}
+            phone={'911'}
+            website={'legacy.winnipeg.ca/fps/'}
           />
           <FAQBox
             name={'Ambulance Department'}
             phone={'911'}
-            website={'winnipeg.ca/ambulance-help'}
+            website={'legacy.winnipeg.ca/fps/'}
           />
           <FAQBox
             name={'Highway Help'}
@@ -42,7 +42,7 @@ const FaqPage = () => {
         </div>
       </div>
 
-      <div className="my-4 grid grid-cols-10 gap-2 rounded-lg border-2 py-2 px-4">
+      <div className="my-8 grid grid-cols-10 gap-2 rounded-lg border-2 py-2 px-4">
         <div className="col-span-10 text-lg font-bold">Contact us</div>
         <div className="col-span-2">Name:</div>
         <input className="rouned-lg col-span-8 border p-1" />
