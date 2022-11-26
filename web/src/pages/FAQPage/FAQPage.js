@@ -13,7 +13,7 @@ const FaqPage = () => {
   return (
     <div className="w-full">
       <div className="text-center">
-        <FAQIcon className={'h-32 w-32'} />
+        <FAQIcon className={'h-32 w-32'} disabled />
         <p className="text-2xl font-bold">FAQ</p>
         <div className="mt-10 grid grid-cols-2 gap-6">
           <FAQBox question={'Question'} answer={'Answer'} />

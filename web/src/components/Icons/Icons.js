@@ -1,6 +1,6 @@
 import { navigate, routes } from '@redwoodjs/router'
 
-export const ActivityIcon = ({ className }) => {
+export const ActivityIcon = ({ className, disabled }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,9 @@ export const ActivityIcon = ({ className }) => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`m-auto ${className} hover:text-blue-700`}
+      className={`m-auto ${className} ${
+        !disabled ? 'hover:text-blue-700' : ''
+      }`}
     >
       <path
         strokeLinecap="round"
@@ -19,55 +21,47 @@ export const ActivityIcon = ({ className }) => {
   )
 }
 
-export const CuisineIcon = ({ className }) => {
+export const CuisineIcon = ({ className, disabled }) => {
   return (
-    <button onClick={() => navigate(routes.cuisine())}>
+    <button onClick={() => navigate(routes.cuisine())} disabled={disabled}>
       <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
         stroke="currentColor"
-        className={`m-auto ${className} hover:text-blue-700`}
+        fill="none"
+        strokeWidth={13}
+        className={`m-auto ${className} group ${
+          !disabled ? 'hover:text-blue-700' : ''
+        }`}
+        version="1.1"
+        id="Capa_1"
+        x="0px"
+        y="0px"
+        viewBox="0 -10 530 530"
+        xmlSpace="preserve"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"
-        />
+        <g>
+          <path d="M391.5,0c-4.142,0-7.5,3.358-7.5,7.5v120c0,4.687-3.813,8.5-8.5,8.5s-8.5-3.813-8.5-8.5V7.5c0-4.142-3.358-7.5-7.5-7.5   S352,3.358,352,7.5v120c0,4.687-3.813,8.5-8.5,8.5s-8.5-3.813-8.5-8.5V7.5c0-4.142-3.358-7.5-7.5-7.5S320,3.358,320,7.5v120   c0,4.687-3.813,8.5-8.5,8.5s-8.5-3.813-8.5-8.5V7.5c0-4.142-3.358-7.5-7.5-7.5S288,3.358,288,7.5v160   c0,12.958,10.542,23.5,23.5,23.5c4.687,0,8.5,3.813,8.5,8.5v73.409c-13.759,3.374-24,15.806-24,30.591v160   c0,26.191,21.309,47.5,47.5,47.5s47.5-21.309,47.5-47.5v-160c0-14.785-10.241-27.216-24-30.591V199.5c0-4.687,3.813-8.5,8.5-8.5   c12.958,0,23.5-10.542,23.5-23.5V7.5C399,3.358,395.642,0,391.5,0z M376,303.5v160c0,17.92-14.58,32.5-32.5,32.5   S311,481.42,311,463.5v-160c0-9.098,7.402-16.5,16.5-16.5h32C368.598,287,376,294.402,376,303.5z M375.5,176   c-12.958,0-23.5,10.542-23.5,23.5V272h-17v-72.5c0-12.958-10.542-23.5-23.5-23.5c-4.687,0-8.5-3.813-8.5-8.5v-18.097   c2.638,1.027,5.503,1.597,8.5,1.597c6.177,0,11.801-2.399,16-6.31c4.199,3.911,9.823,6.31,16,6.31s11.801-2.399,16-6.31   c4.199,3.911,9.823,6.31,16,6.31c2.997,0,5.862-0.57,8.5-1.597V167.5C384,172.187,380.187,176,375.5,176z" />
+          <path d="M183.5,0c-20.479,0-38.826,11.623-51.663,32.728C118.86,54.064,112,84.07,112,119.5c0,25.652,13.894,49.464,36.26,62.144   c7.242,4.105,11.74,12.106,11.74,20.88v70.385c-13.759,3.374-24,15.806-24,30.591v160c0,26.191,21.309,47.5,47.5,47.5   s47.5-21.309,47.5-47.5v-160c0-14.785-10.241-27.216-24-30.591v-70.385c0-8.774,4.499-16.775,11.74-20.88   C241.106,168.964,255,145.152,255,119.5c0-35.43-6.86-65.436-19.837-86.772C222.326,11.623,203.979,0,183.5,0z M216,303.5v160   c0,17.92-14.58,32.5-32.5,32.5S151,481.42,151,463.5v-160c0-9.098,7.402-16.5,16.5-16.5h32C208.598,287,216,294.402,216,303.5z    M211.343,168.595C199.412,175.359,192,188.36,192,202.524V272h-17v-69.476c0-14.164-7.412-27.165-19.342-33.929   C137.981,158.574,127,139.762,127,119.5c0-32.68,6.104-59.99,17.653-78.978C154.809,23.826,168.242,15,183.5,15   s28.691,8.826,38.847,25.522C233.896,59.51,240,86.82,240,119.5C240,139.762,229.019,158.574,211.343,168.595z" />
+          <path d="M191.5,304c-4.142,0-7.5,3.358-7.5,7.5v16c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-16   C199,307.358,195.642,304,191.5,304z" />
+          <path d="M191.5,352c-4.142,0-7.5,3.358-7.5,7.5v72c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-72   C199,355.358,195.642,352,191.5,352z" />
+          <path d="M351.5,304c-4.142,0-7.5,3.358-7.5,7.5v16c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-16   C359,307.358,355.642,304,351.5,304z" />
+          <path d="M351.5,352c-4.142,0-7.5,3.358-7.5,7.5v72c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-72   C359,355.358,355.642,352,351.5,352z" />
+        </g>
       </svg>
     </button>
   )
 }
 
-export const HomeIcon = ({ className }) => {
+export const HomeIcon = ({ className, disabled }) => {
   return (
-    <button onClick={() => navigate(routes.accomodation())}>
+    <button onClick={() => navigate(routes.accomodation())} disabled={disabled}>
       <svg
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={`m-auto ${className} hover:text-blue-700`}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-        />
-      </svg>
-    </button>
-  )
-}
-
-export const CarIcon = ({ className }) => {
-  return (
-    <button onClick={() => navigate(routes.transportation())}>
-      <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className={`m-auto ${className} hover:text-blue-700`}
+        className={`m-auto ${className} ${
+          !disabled ? 'hover:text-blue-700' : ''
+        }`}
       >
         <path
           strokeLinecap="round"
@@ -79,14 +73,37 @@ export const CarIcon = ({ className }) => {
   )
 }
 
-export const TicketIcon = ({ className }) => {
+export const CarIcon = ({ className, disabled }) => {
+  return (
+    <button
+      onClick={() => navigate(routes.transportation())}
+      disabled={disabled}
+    >
+      <svg
+        stroke="currentColor"
+        fill="none"
+        strokeWidth={0.85}
+        className={`m-auto ${className} ${
+          !disabled ? 'hover:text-blue-700' : ''
+        }`}
+        viewBox="-1 -1 18 18"
+      >
+        <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+      </svg>
+    </button>
+  )
+}
+
+export const TicketIcon = ({ className, disabled }) => {
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`m-auto ${className} hover:text-blue-700`}
+      className={`m-auto ${className} ${
+        !disabled ? 'hover:text-blue-700' : ''
+      }`}
     >
       <path
         strokeLinecap="round"
@@ -97,15 +114,17 @@ export const TicketIcon = ({ className }) => {
   )
 }
 
-export const FAQIcon = ({ className }) => {
+export const FAQIcon = ({ className, disabled }) => {
   return (
-    <button onClick={() => navigate(routes.faq({}))}>
+    <button onClick={() => navigate(routes.faq())} disabled={disabled}>
       <svg
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={`m-auto ${className} hover:text-blue-700`}
+        className={`m-auto ${className} ${
+          !disabled ? 'hover:text-blue-700' : ''
+        }`}
       >
         <path
           strokeLinecap="round"
