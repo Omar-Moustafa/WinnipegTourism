@@ -24,6 +24,7 @@ const TransactionPage = ({ name, price }) => {
         <div className="col-span-2">Card number:</div>
         <input
           className="rouned-lg col-span-8 border p-1"
+          type="number"
           placeholder="XXXX-XXXX-XXXX-XXXX"
         />
         <div className="col-span-2">Name on card:</div>
@@ -32,11 +33,13 @@ const TransactionPage = ({ name, price }) => {
         <input
           className="rouned-lg col-span-8 border p-1"
           placeholder="XXX or XXXX"
+          type="number"
         />
         <div className="col-span-2">Expiry date:</div>
         <input
           className="rouned-lg col-span-8 border p-1"
-          placeholder="MM/YY"
+          placeholder="MMYY"
+          type="number"
         />
         <div className="col-span-10">
           <button
