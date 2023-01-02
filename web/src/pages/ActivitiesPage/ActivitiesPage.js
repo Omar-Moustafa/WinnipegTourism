@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
+
 import { ActivityIcon } from 'src/components/Icons'
-import { summerActivites, winterActivities } from 'src/mockedData'
+import { summerActivites as sum, winterActivities } from 'src/mockedData'
 
 const ActivityBox = ({ ActivityType, divId }) => {
   return (
@@ -40,13 +42,39 @@ const ActivitiesDetails = ({
 }
 
 const ActivitiesPage = () => {
+  const [summerActivites, setSum] = useState(sum)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  useEffect(() => {
+    {
+      if (searchTerm == '') {
+        setSum(sum)
+        return
+      }
+      const filtered = []
+      const searchFilter = (i) => {
+        if (i?.name?.toLowerCase().includes(searchTerm.toLowerCase())) {
+          console.log(i.type)
+          filtered.push(i)
+        }
+      }
+      sum.filter(searchFilter)
+      setSum(filtered)
+    }
+  }, [searchTerm])
   return (
     <>
       <div className="mt-2 w-full">
         <div className="px-20 text-center">
           <ActivityIcon className={'h-32 w-32'} disabled />
           <p className="text-2xl font-bold">ACTIVITIES</p>
-          <div className="mx-auto mt-10 grid w-96 grid-cols-2 gap-1">
+          <input
+            type="text"
+            className="mt-2 w-64 border-2 px-2 py-1"
+            placeholder="Search"
+            onChange={(e) => setSearchTerm(e.target?.value)}
+          />
+          <div className="mx-auto mt-5 grid w-96 grid-cols-2 gap-1">
             <ActivityBox ActivityType={'Summer'} divId={'summer'} />
             <ActivityBox ActivityType={'Winter'} divId={'winter'} />
           </div>

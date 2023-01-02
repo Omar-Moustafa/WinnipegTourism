@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import { CuisineIcon } from 'src/components/Icons/Icons'
 import {
   middleEasternCuisines,
@@ -37,11 +39,20 @@ const CuisineDetails = ({ name, topdish, rating, location, website }) => {
 }
 
 const CuisinePage = () => {
+  const [filtered, setFiltered] = useState(null)
   return (
     <div className="mt-2 w-full">
       <div className="px-20 text-center">
         <CuisineIcon className={'h-32 w-32'} disabled />
         <p className="text-2xl font-bold">Cuisine</p>
+        <input
+          type="number"
+          className="mt-2 w-64 border-2 px-2 py-1"
+          placeholder="Min. Rating"
+          min="0"
+          max="5"
+          onChange={(e) => setFiltered(e.target?.value)}
+        />
         <div className="mt-10 grid grid-cols-5 gap-1 px-40">
           <CuisineBox cuisineType={'Middle Eastern'} divId={'middleEast'} />
           <CuisineBox cuisineType={'African'} divId={'african'} />
@@ -57,110 +68,125 @@ const CuisinePage = () => {
           >
             MIDDLE EASTERN
           </div>
-          {middleEasternCuisines.map((c) => (
-            <>
-              <div className="col-span-3 mt-2 border-2 p-1">
-                <img src={c.image} alt={c.name} className="m-auto" />
-              </div>
-              <div className="col-span-7 mt-2 border-2 p-1">
-                <CuisineDetails
-                  name={c.name}
-                  topdish={c.topdish}
-                  rating={c.rating}
-                  location={c.location}
-                  website={c.website}
-                />
-              </div>
-            </>
-          ))}
+          {middleEasternCuisines.map((c) => {
+            if (filtered && c.rating < filtered) return null
+            return (
+              <>
+                <div className="col-span-3 mt-2 border-2 p-1">
+                  <img src={c.image} alt={c.name} className="m-auto" />
+                </div>
+                <div className="col-span-7 mt-2 border-2 p-1">
+                  <CuisineDetails
+                    name={c.name}
+                    topdish={c.topdish}
+                    rating={c.rating}
+                    location={c.location}
+                    website={c.website}
+                  />
+                </div>
+              </>
+            )
+          })}
           <div
             id="indian"
             className="col-span-10 mt-10 border-2 bg-amber-200 text-4xl font-semibold"
           >
             INDIAN
           </div>
-          {indianCuisines.map((c) => (
-            <>
-              <div className="col-span-3 mt-2 border-2 p-1">
-                <img src={c.image} alt={c.name} className="m-auto h-64" />
-              </div>
-              <div className="col-span-7 mt-2 border-2 p-1">
-                <CuisineDetails
-                  name={c.name}
-                  topdish={c.topdish}
-                  rating={c.rating}
-                  location={c.location}
-                  website={c.website}
-                />
-              </div>
-            </>
-          ))}
+          {indianCuisines.map((c) => {
+            if (filtered && c.rating < filtered) return null
+            return (
+              <>
+                <div className="col-span-3 mt-2 border-2 p-1">
+                  <img src={c.image} alt={c.name} className="m-auto h-64" />
+                </div>
+                <div className="col-span-7 mt-2 border-2 p-1">
+                  <CuisineDetails
+                    name={c.name}
+                    topdish={c.topdish}
+                    rating={c.rating}
+                    location={c.location}
+                    website={c.website}
+                  />
+                </div>
+              </>
+            )
+          })}
           <div
             id="chinese"
             className="col-span-10 mt-10 border-2 bg-amber-200 text-4xl font-semibold"
           >
             CHINESE
           </div>
-          {chineseCuisines.map((c) => (
-            <>
-              <div className="col-span-3 mt-2 border-2 p-1">
-                <img src={c.image} alt={c.name} className="m-auto h-64" />
-              </div>
-              <div className="col-span-7 mt-2 border-2 p-1">
-                <CuisineDetails
-                  name={c.name}
-                  topdish={c.topdish}
-                  rating={c.rating}
-                  location={c.location}
-                  website={c.website}
-                />
-              </div>
-            </>
-          ))}
+          {chineseCuisines.map((c) => {
+            if (filtered && c.rating < filtered) return null
+            return (
+              <>
+                <div className="col-span-3 mt-2 border-2 p-1">
+                  <img src={c.image} alt={c.name} className="m-auto h-64" />
+                </div>
+                <div className="col-span-7 mt-2 border-2 p-1">
+                  <CuisineDetails
+                    name={c.name}
+                    topdish={c.topdish}
+                    rating={c.rating}
+                    location={c.location}
+                    website={c.website}
+                  />
+                </div>
+              </>
+            )
+          })}
           <div
             id="african"
             className="col-span-10 mt-10 border-2 bg-amber-200 text-4xl font-semibold"
           >
             AFRICAN
           </div>
-          {africanCuisines.map((c) => (
-            <>
-              <div className="col-span-3 mt-2 border-2 p-1">
-                <img src={c.image} alt={c.name} className="m-auto h-64" />
-              </div>
-              <div className="col-span-7 mt-2 border-2 p-1">
-                <CuisineDetails
-                  name={c.name}
-                  topdish={c.topdish}
-                  rating={c.rating}
-                  location={c.location}
-                  website={c.website}
-                />
-              </div>
-            </>
-          ))}
+          {africanCuisines.map((c) => {
+            if (filtered && c.rating < filtered) return null
+            return (
+              <>
+                <div className="col-span-3 mt-2 border-2 p-1">
+                  <img src={c.image} alt={c.name} className="m-auto h-64" />
+                </div>
+                <div className="col-span-7 mt-2 border-2 p-1">
+                  <CuisineDetails
+                    name={c.name}
+                    topdish={c.topdish}
+                    rating={c.rating}
+                    location={c.location}
+                    website={c.website}
+                  />
+                </div>
+              </>
+            )
+          })}
           <div
             id="local"
             className="col-span-10 mt-10 border-2 bg-amber-200 text-4xl font-semibold"
           >
             LOCAL
           </div>
-          {localCuisines.map((c) => (
-            <>
-              <div className="col-span-3 mt-2 border-2 p-1">
-                <img src={c.image} alt={c.name} className="m-auto h-64" />
-              </div>
-              <div className="col-span-7 mt-2 border-2 p-1">
-                <CuisineDetails
-                  name={c.name}
-                  topdish={c.topdish}
-                  rating={c.rating}
-                  location={c.location}
-                  website={c.website}
-                />
-              </div>
-            </>
-          ))}
+          {localCuisines.map((c) => {
+            if (filtered && c.rating < filtered) return null
+            return (
+              <>
+                <div className="col-span-3 mt-2 border-2 p-1">
+                  <img src={c.image} alt={c.name} className="m-auto h-64" />
+                </div>
+                <div className="col-span-7 mt-2 border-2 p-1">
+                  <CuisineDetails
+                    name={c.name}
+                    topdish={c.topdish}
+                    rating={c.rating}
+                    location={c.location}
+                    website={c.website}
+                  />
+                </div>
+              </>
+            )
+          })}
         </div>
       </div>
     </div>

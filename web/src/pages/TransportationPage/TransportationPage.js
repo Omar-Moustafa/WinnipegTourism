@@ -1,6 +1,7 @@
-import { CarIcon } from 'src/components/Icons/Icons'
-import { transportation } from 'src/mockedData'
+import { useEffect, useState } from 'react'
 
+import { CarIcon } from 'src/components/Icons/Icons'
+import { transportation as trans } from 'src/mockedData'
 const TransporationDetails = ({ type, location, price, website }) => {
   return (
     <div className="grid grid-cols-10 gap-2 px-2 text-left">
@@ -18,12 +19,39 @@ const TransporationDetails = ({ type, location, price, website }) => {
 }
 
 const TransportationPage = () => {
+  const [transportation, setTrans] = useState(trans)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  useEffect(() => {
+    {
+      if (searchTerm == '') {
+        setTrans(trans)
+        return
+      }
+      const filtered = []
+      const searchFilter = (i) => {
+        if (i?.type?.toLowerCase().includes(searchTerm.toLowerCase())) {
+          console.log(i.type)
+          filtered.push(i)
+        }
+      }
+      trans.filter(searchFilter)
+      setTrans(filtered)
+    }
+  }, [searchTerm])
+
   return (
     <div className="w-full">
       <div className="px-20 text-center">
         <CarIcon className={'h-32 w-32'} disabled />
         <p className="text-2xl font-bold">Transportation</p>
-        <div className="mt-10 grid grid-cols-10 gap-5 border-2 p-4">
+        <input
+          type="text"
+          className="mt-2 w-64 border-2 px-2 py-1"
+          placeholder="Search"
+          onChange={(e) => setSearchTerm(e.target?.value)}
+        />
+        <div className="mt-5 grid grid-cols-10 gap-5 border-2 p-4">
           {transportation.map((t) => (
             <>
               <div className="col-span-3 border-2 p-1">

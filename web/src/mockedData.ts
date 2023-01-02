@@ -129,15 +129,6 @@ export const localCuisines = [
 
 export const accomodations = [
   {
-    name: 'Delta Hotels by Marriot Winnipeg',
-    rating: '4.3',
-    amenities: 'pool, hot tub, pet-friendly, free-wifi, gym',
-    price: 195,
-    location: '350 St Mary Ave, Winnipeg, MB R3C 3J2',
-    website: 'https://www.marriott.com/en-us/hotels',
-    image: AccommodationMarriot,
-  },
-  {
     name: 'Mere Hotel',
     rating: '4.4',
     amenities: 'pet-friendly, gym',
@@ -146,6 +137,16 @@ export const accomodations = [
     website: 'https://www.merehotel.com/',
     image: AccommodationMere,
   },
+  {
+    name: 'Delta Hotels by Marriot Winnipeg',
+    rating: '4.3',
+    amenities: 'pool, hot tub, pet-friendly, free-wifi, gym',
+    price: 195,
+    location: '350 St Mary Ave, Winnipeg, MB R3C 3J2',
+    website: 'https://www.marriott.com/en-us/hotels',
+    image: AccommodationMarriot,
+  },
+
   {
     name: 'Fort Garry Hotel',
     rating: '4.4',
